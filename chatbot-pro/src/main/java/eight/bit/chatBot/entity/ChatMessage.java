@@ -19,5 +19,5 @@ public class ChatMessage {
     private LocalDateTime timestamp;
 
     @Enumerated(EnumType.STRING)
-    private Department department; // To ensure isolation in queries
+    private DepartmentList department; // To ensure isolation in queries
 }

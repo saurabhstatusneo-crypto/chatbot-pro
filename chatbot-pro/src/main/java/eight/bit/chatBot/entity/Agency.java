@@ -1,15 +1,13 @@
 package eight.bit.chatBot.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
-@Data
-@Table(name = "departments")
-public class Department {
+@Table(name = "agency")
+public class Agency {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private Long agencyId;
+    private String location;
 }

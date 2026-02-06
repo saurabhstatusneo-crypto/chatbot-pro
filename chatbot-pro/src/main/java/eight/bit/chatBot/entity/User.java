@@ -1,7 +1,7 @@
 package eight.bit.chatBot.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,23 +9,22 @@ import lombok.NoArgsConstructor;
 @Table(name = "users")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long agencyId;
+    private Long departmentId;
+
+    @Column(unique = true)
     private String username;
-//    @JsonIgnore
+
     private String password; // Encoded
-
     @Enumerated(EnumType.STRING)
-    private Department department; // JAVA or MERN
+    private DepartmentList department; // JAVA or MERN
 
-    public User(String username, String password, Department department) {
-        this.username = username;
-        this.password = password;
-        this.department = department;
-    }
 }
 
 
